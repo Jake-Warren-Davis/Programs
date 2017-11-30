@@ -1,0 +1,69 @@
+﻿<Window x:Class="PurchasingApp.PurchaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="PurchaseWindow" Height="479.5" Width="772.5">
+    <Grid RenderTransformOrigin="0.49,0.469" Margin="0,0,2,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF1DEAF3" Offset="0"/>
+                <GradientStop Color="#FF001F72" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle Fill="#FF1DDCF0" HorizontalAlignment="Left" Height="38" Stroke="Black" VerticalAlignment="Top" Width="764"/>
+        <Label x:Name="lblUsername" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="imgBasket" Margin="717,2,0,412" Source="Stack.png" Stretch="Fill" MouseLeftButtonDown="imgBasket_MouseLeftButtonDown" ToolTip="Go to the cart."/>
+        <ListBox x:Name="LstOrders" HorizontalAlignment="Left" Height="211" Margin="10,114,0,0" VerticalAlignment="Top" Width="211" BorderThickness="1,2,2,2" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="True" >
+            
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <!--<CheckBox Content="{Binding TheText}" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />-->
+                    <CheckBox xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml' Content='{Binding TheText}' IsChecked='{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}' Checked="CheckBox_Checked" ClickMode="Press" Unchecked="CheckBox_Unchecked_1" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+            
+            <!--
+            <CheckBox Content="Superman Comic £2.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"/>
+            <CheckBox Content="Apple juice drink £1.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Spiderman Novel £4.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Superman novel £4.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Batman novel £4.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Doretoes crisps £0.80" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Chocolate bar £0.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Star wars novel £5.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Spiderman Comic £1.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Supergirl Comic £1.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Superwoman Comic £1.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Superboy Comic £1.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Simpsons Comic £2.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Family Guy Comic £2.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Southpark Comic £2.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Simpsons Mug £8.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Family Guy Mug £9.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Southpark Mug £8.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Star Wars Mug £6.99" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+            <CheckBox Content="Superman Mug £4.99" IsChecked="{Binding Checked ,Mode=TwoWay}" />
+            -->
+        </ListBox>
+        <Label x:Name="lblOrders" Content="Products" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="23" Margin="75,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" ToolTip="Type in what to search for."/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="176,87,0,0" VerticalAlignment="Top" Width="45" Click="btnSearch_Click" ToolTip="Press this to carry out a search."/>
+        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Height="22" Margin="263,235,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="58" TextChanged="txtQuantity_TextChanged"/>
+        <Button x:Name="btnNmbUp" Content="^" HorizontalAlignment="Left" Margin="263,216,0,0" VerticalAlignment="Top" Width="58" Height="19" Click="btnNmbUp_Click" ToolTip="Increase the number."/>
+        <Button x:Name="btnNmbDown" Content="^" HorizontalAlignment="Left" Margin="263,257,0,0" VerticalAlignment="Top" Width="58" Height="19" RenderTransformOrigin="0.5,0.5" Click="btnNmbDown_Click" ToolTip="Decrease the number">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.778"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Label x:Name="lblNumb" Content="Number" HorizontalAlignment="Left" Margin="263,190,0,0" VerticalAlignment="Top" Width="58"/>
+        <Button x:Name="btnCart" Content="Add to cart" HorizontalAlignment="Left" Margin="345,235,0,0" VerticalAlignment="Top" Width="75" Click="btnCart_Click" ToolTip="Add selected items to the cart."/>
+        <Button x:Name="btnClearCart" Content="Clear Cart" HorizontalAlignment="Left" Margin="345,262,0,0" VerticalAlignment="Top" Width="75" Click="btnClearCart_Click" ToolTip="Clear the cart of all items."/>
+    </Grid>
+</Window>

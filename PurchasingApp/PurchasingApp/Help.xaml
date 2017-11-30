@@ -1,0 +1,9 @@
+﻿<Window x:Class="PurchasingApp.Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Help" Height="300" Width="300">
+    <Grid>
+        <Label Content="Help&#xD;&#xA;&#xD;&#xA;Usernames:&#xD;&#xA;Guest1&#xD;&#xA;Guest2&#xD;&#xA;Guest3&#xD;&#xA;&#xD;&#xA;Passwords:&#xD;&#xA;Pass1&#xD;&#xA;Pass2&#xD;&#xA;Pass3" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="235" Width="272"/>
+
+    </Grid>
+</Window>

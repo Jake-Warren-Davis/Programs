@@ -1,0 +1,21 @@
+﻿<Window x:Class="PurchasingApp.Basket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Basket" Height="447" Width="397">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF1DEAF3" Offset="0"/>
+                <GradientStop Color="#FF001F72" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="lblPrice" Content="Total Price:" HorizontalAlignment="Left" Margin="132,254,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lstBasket" HorizontalAlignment="Left" Height="218" Margin="10,10,0,0" VerticalAlignment="Top" Width="369" SelectionMode="Multiple"/>
+        <Button x:Name="btnRemove" Content="Remove item" HorizontalAlignment="Left" Margin="304,233,0,0" VerticalAlignment="Top" Width="75" Click="btnRemove_Click" ToolTip="Remove selected items."/>
+        <Button x:Name="btnBuy" Content="Checkout" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top" Width="369" Height="27" Click="btnBuy_Click" ToolTip="Calculate the total price of everthing in the basket."/>
+
+    </Grid>
+</Window>

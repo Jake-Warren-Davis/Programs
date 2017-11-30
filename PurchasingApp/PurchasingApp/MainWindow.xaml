@@ -1,0 +1,16 @@
+﻿<Window x:Class="PurchasingApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="23" Margin="88,74,0,0" TextWrapping="Wrap" Text="Guest1" VerticalAlignment="Top" Width="266" ToolTip="Username" />
+        <Label x:Name="lblLogin" Content="Login" HorizontalAlignment="Left" Margin="223,26,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="88,115,0,0" TextWrapping="Wrap" Text="Pass1" VerticalAlignment="Top" Width="266" ToolTip="Password"/>
+        <Label x:Name="lblLoginStatus" Content="Label" HorizontalAlignment="Left" Margin="151,157,0,0" VerticalAlignment="Top" Width="203"/>
+        <Image x:Name="imgDanger" HorizontalAlignment="Left" Height="26" Margin="109,157,0,0" VerticalAlignment="Top" Width="28" Source="emergency-alert-icon-alert-icon-8.png"/>
+        <Image x:Name="imgLog_In" HorizontalAlignment="Left" Height="64" Margin="359,74,0,0" VerticalAlignment="Top" Width="66" Source="logout-512.png" MouseDown="imgLog_In_MouseDown" ToolTip="Login"/>
+        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Left" Margin="359,157,0,0" VerticalAlignment="Top" Width="66" Click="btnHelp_Click" ToolTip="Click for help."/>
+
+
+    </Grid>
+</Window>
